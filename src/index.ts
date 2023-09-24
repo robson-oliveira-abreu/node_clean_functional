@@ -1,5 +1,13 @@
 import express from "express";
-import { userModule } from "./modules/user/user.module.js";
+import 'dotenv/config'
+import { database } from "./database/database";
+
+import { userModule } from "./modules/user/user.module";
+
+database
+    .initialize()
+    .then(() => console.log("DataBase running!"))
+    .catch((err) => console.error("Database Error:", err))
 
 const app = express();
 

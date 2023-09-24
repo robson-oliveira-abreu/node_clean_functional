@@ -1,5 +1,5 @@
-import { User } from "./userEntity.type";
+import { UserRepository } from "./userRepository.type";
 
 export type UserServiceProps = {
-    userEntity: (name: string) => User;
+    userRepository: UserRepository ;
 }

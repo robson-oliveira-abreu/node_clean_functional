@@ -1,12 +1,10 @@
-import { User } from "../types/userEntity.type";
+import { Entity, Column, PrimaryGeneratedColumn } from "typeorm"
 
-function userEntity(name: string): User {
-    const newId = new Date().getTime();
+@Entity('user')
+export class User {
+    @PrimaryGeneratedColumn('uuid')
+    id: string;
 
-    return {
-        id: newId,
-        name: name,
-    }
+    @Column()
+    name: string
 }
-
-export { userEntity }
